@@ -1,5 +1,7 @@
 {
     "board": "arduino:avr:leonardo",
-    "port": "/dev/cu.usbmodemMIDI1",
-    "sketch": "MidiKeys.ino"
+    "programmer": "USBtinyISP",
+    "sketch": "MidiKeys.ino",
+    "output": "../ArduinoOutput",
+    "port": "/dev/tty.usbmodemMIDI1"
 }

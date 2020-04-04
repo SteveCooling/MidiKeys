@@ -1,139 +1,147 @@
 /**
- * 
- *  MidiKeys - a stab at a MIDI controller keyboard.
- * 
- *  - Uses parts from an old National organ
- *  - Multiplexed key reading
- *  - MIDI over USB
  *
- *  Copyright (c) 2020 - Morten Johansen <morten@bzzt.no> 
- *
+ * test.ino
+ * Test use of the keyboard scanner library
+ * 
+ * Copyright (c) 2020 <morten@bzzt.no> 
+ * 
  */
+
+#define NUM_BANKS 16
+#define NUM_NOTES 128
+
+// When this matches a primary key switch has been trigged
+#define PRIMARY_BANK_MASK 0x01
+#define PRIMARY_BANK_BITS 0x01
+
+#include <math.h>
+#include "KeyboardMux.h"
 #include "MIDIUSB.h"
-//#include <EveryTimer.h>
 
-//EveryTimer timer;
-
-#define DEBUG true
-
+#define BLINKLED LED_BUILTIN
 #define MIDI_CHAN 0
 
-#define NUM_NOTES 128
-bool note_on[NUM_NOTES];
+KeyboardMux keyboard;
+bool inverse_logic;
+bool primary_bank;
 
-#define NUM_KEYS 6
-#define NUM_BANKS 7
+// Timestamps for half events
+unsigned long half_on[NUM_NOTES];
+unsigned long half_off[NUM_NOTES];
+// Stores computed velocity for each note
+unsigned char note_velocity[NUM_NOTES];
 
-byte note_offset = 42; // First note on first bank in MIDI land.
+char transpose = 56;
 
-int keys[NUM_KEYS] = {2,3,4,5,6,7};
-int banks[NUM_BANKS] = {8,9,10,14,15,16,A0};
+float velocity_factor = 0.2;
+float velocity_curve  = 60;
 
-void setupKeys() {
-  int k = 0;
-  int b = 0;
-  int n = 0;
-
-  for(n = 0; n < NUM_NOTES; n ++) {
-    note_on[n] = true; // Inverse logic.
-  }
-    
-  // Initialize ports
-  // Key inputs
-  for(k = 0; k < NUM_KEYS; k ++) {
-    pinMode(keys[k], INPUT_PULLUP);
-  }
-  // Bank outputs. Set as inputs with pullup when they are not selected.
-  for(b = 0; b < NUM_BANKS; b ++) {
-    pinMode(banks[b], INPUT_PULLUP);
-  }
-  
+unsigned char bankAndPosToNote(int bank, unsigned char pos) {
+  // XXX: This requires primary/second bank bit to be LSB
+  unsigned char note = (bank>>1) * 8;
+  return note + pos + transpose;
 }
 
-void enableBank(int b) {
-    pinMode(b, OUTPUT);
-    digitalWrite(b, LOW);
-    //delay(1);
-}
+unsigned char microsToVelocity(unsigned long micros) {
+    float millis = micros/1000;
+    float velocity = velocity_curve * log(velocity_factor*millis);
+    if(velocity < 0) return 127;
+    if(velocity > 127) return 1;
+    return 127-(char)round(velocity);
 
-void disableBank(int b) {
-    digitalWrite(b, HIGH);
-    pinMode(b, INPUT_PULLUP);
-    //delay(1);
-}
-
-void scanKeys() {
-  int k = 0;
-  int b = 0;
-  bool keyState = true;
-  byte noteNumber = 0;
-
-  //Serial.println("== KEYS ==");
-  // Iterate banks
-  for(b = 0; b < NUM_BANKS; b ++) {
-    enableBank(banks[b]);
-
-    // Iterate keys in the bank
-    for(k = 0; k < NUM_KEYS; k ++) {
-      keyState = digitalRead(keys[k]);
-      noteNumber = note_offset + (b * NUM_KEYS) + k;
-      if(keyState != note_on[noteNumber]) {
-        // Note state has changed
-        if(!keyState) {
-          // note is On
-          if(DEBUG) {
-            Serial.print("Note on  ");
-            Serial.println(noteNumber);
-          }
-          handleKeyboardNoteOn(noteNumber);
-        } else {
-          // note is Off
-          if(DEBUG) {
-            Serial.print("Note off ");
-            Serial.println(noteNumber);
-          }
-          handleKeyboardNoteOff(noteNumber);
-        }
-
-        // Save the current state.
-        note_on[noteNumber] = keyState;
-      }
-    }
-
-    disableBank(banks[b]);
-  }
 }
 
 void noteOn(byte channel, byte pitch, byte velocity) {
   midiEventPacket_t noteOn = {0x09, 0x90 | channel, pitch, velocity};
   MidiUSB.sendMIDI(noteOn);
+  MidiUSB.flush();
 }
 
 void noteOff(byte channel, byte pitch, byte velocity) {
-  midiEventPacket_t noteOff = {0x08, 0x80 | channel, pitch, velocity};
-  MidiUSB.sendMIDI(noteOff);
+  midiEventPacket_t noteOn = {0x08, 0x80 | channel, pitch, velocity};
+  MidiUSB.sendMIDI(noteOn);
+  MidiUSB.flush();
 }
 
-void handleKeyboardNoteOn(byte number) {
-  noteOn(MIDI_CHAN, number, 64);
-  MidiUSB.flush();
-};
+void noteChanged(unsigned char note, bool primary_bank) {
+  unsigned long time = micros();
 
-void handleKeyboardNoteOff(byte number) {
-  noteOff(MIDI_CHAN, number, 64);
-  MidiUSB.flush();
-};
+  if(note_velocity[note] == 0) {
+    // Note is turning on
+    if(primary_bank) {
+      //Serial.println(" is half on");
+      half_on[note] = time;
+    } else {
+      note_velocity[note] = microsToVelocity(time-half_on[note]);
+      //half_on[note] = 0;
+      noteOn(MIDI_CHAN, note, note_velocity[note]);
+      Serial.print(note, DEC);
+      Serial.print(" is fully on  - ");
+      Serial.println(note_velocity[note], DEC);
+    }
+  } else {
+    // Note is turning off
+    if(primary_bank) {
+      note_velocity[note] = microsToVelocity(time-half_off[note]);
+      //half_off[note] = 0;
+      noteOff(MIDI_CHAN, note, note_velocity[note]);
+      Serial.print(note, DEC);
+      Serial.print(" is fully off - ");
+      Serial.println(note_velocity[note], DEC);
+      note_velocity[note] = 0;
+    } else {
+      //Serial.println(" is half off");
+      half_off[note] = time;
+    }
+  }
 
+}
 
+void bankChanged(int bank, unsigned char data) {
+  unsigned char pos;
+  unsigned char note;
+
+  primary_bank = (bank & PRIMARY_BANK_MASK) == PRIMARY_BANK_BITS;
+
+  Serial.print(bank);
+  Serial.print("\t");
+  Serial.println(data, HEX);
+
+  for(pos = 0; pos < 8; pos++) {
+    if(data & 0x01 == 0x01) {
+      note = bankAndPosToNote(bank, pos);
+      //Serial.print("\t");
+      //Serial.println(note, DEC);
+      // Now we know what note changed
+      noteChanged(note, primary_bank);
+    }
+    data = data>>1;
+  }
+}
+
+// the setup function runs once when you press reset or power the board
 void setup() {
-    Serial.begin(115200);
-    if(DEBUG) while (!Serial); // Wait for serial port to start. Remove after debugging.
-    setupKeys();
-    //timer.Every(10, scanKeys);
-    Serial.println("MidiKeys ready.");
+  // init arrays
+  int c = 0;
+  for(c=0; c < NUM_NOTES; c++) {
+    half_on[c] = 0;
+    half_off[c] = 0;
+    note_velocity[c] = 0;
+  }
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(BLINKLED, OUTPUT);
+  Serial.begin(115200);
+  // initialize the keyboard mux reader
+  keyboard.init();
+  keyboard.setBankChanged(bankChanged);
+  inverse_logic = keyboard.detectPullup();
 }
 
+// the loop function runs over and over again forever
 void loop() {
-    //timer.Update();
-    scanKeys();
+
+  keyboard.loop();
+  delayMicroseconds(10); // Minimum wait for MUX settling
+  // This wait time can be used for other calculations or communications
+
 }
