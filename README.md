@@ -1,19 +1,25 @@
 # MidiKeys
 
 Dissecting an old broken organ I got the idea to turn it into a MIDI keyboard.
-This is the code that reads the keys and knobs, and turns it into MIDI messages.
+I've since gotten a keybed that already had dual key switches for the velocity sensitivity, and been working on circuitry and code to support velocity sensitivity.
+My plan is to produce a versatile open source keyboard controller board that can be used in various keyboard projects.
 
 Works:
 
-* Basic keyboard multiplexing (organ style)
+* Velocity sensitive multiplexed keyboard scanning
+* Note off velocity sensitivity (not common in commercial keyboards, fun to be had here)
 
-I'd like:
+Plans:
 
-* Velocity sensitivity (dual switches per key)
-* Pot/slider multiplexing
-* Mackie style DAW control
+* Work out the bugs in the keyboard scanner (keys sometimes hang or go undetected)
+* Pot/slider (analog input) multiplexing
+* Dedicated PCB with all required components and connectors
+* Aftertouch support (channel pressure or polyphonic)
+  * I have an idea for pseudo-polyphonic aftertouch which will make the controller quite powerful compared to normal keyboards.
 
-Maybe even:
+Maybe in time:
 
-* Channel pressure
-* Pressure sensors on each key for full polyphonic aftertouch 
+* Mackie style DAW control support
+* Keyboard splits and layers
+* Interactive configuration from computer
+
