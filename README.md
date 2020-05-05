@@ -15,11 +15,14 @@ Plans:
 * Pot/slider (analog input) multiplexing
 * Dedicated PCB with all required components and connectors
 * Aftertouch support (channel pressure or polyphonic)
-  * I have an idea for pseudo-polyphonic aftertouch which will make the controller quite powerful compared to normal keyboards.
+  * Maybe pseudo-polyphonic aftertouch is possible by using a handful of pressure sensors (one per octave?) and interpolating the key pressure. 
 
 Maybe in time:
 
 * Mackie style DAW control support
 * Keyboard splits and layers
 * Interactive configuration from computer
+* Arpeggiator with some cool touches?
+  * Internal or MIDI timing
+  * Oneshot/lick mode: Only arpeggiate when multiple keys are on, and in play order. Lay a chord and let the keyboard "slide" through the notes for you. In tempo.
 
