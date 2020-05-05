@@ -12,12 +12,24 @@
  */
 
 #include "KeyboardMux.h"
+#include "velocity.h"
 #include <avr/io.h>
 #include <pins_arduino.h>
+#include <wiring.c>
 
 void KeyboardMux::init() {
   this->setupPortB();
   this->setupPortF();
+
+  // init arrays
+  int c = 0;
+  for(c=0; c < NUM_KEYS; c++) {
+    this->half_on[c] = 0;
+    this->half_off[c] = 0;
+  }
+  for(c=0; c < NUM_BANKS; c++) {
+    this->bankstate[c] = 0xff;
+  }
 }
 
 void KeyboardMux::setupPortB() {
@@ -38,23 +50,71 @@ void KeyboardMux::setupPortF() {
   PORTF = 0x00;
 }
 
-void KeyboardMux::setBankChanged(void (*bankChanged)(int bank, unsigned char data)) {
-  this->bankChanged = bankChanged;
+void KeyboardMux::setKeyOn(void (*keyOn)(unsigned char key, unsigned char velocity)) {
+  this->keyOn = keyOn;
 }
 
-bool KeyboardMux::detectPullup() {
-  return PINB >= 0x80;
+void KeyboardMux::setKeyOff(void (*keyOff)(unsigned char key, unsigned char velocity)) {
+  this->keyOff = keyOff;
+}
+
+unsigned char KeyboardMux::velocity(unsigned long micros) {
+    if(micros >= 65535) micros = 65535;
+    // Drop the 8 lowest bits of the microsecond duration and lookup the corresponding MIDI velocity
+    unsigned char time = micros>>8;
+    return velocity_log[time];
+}
+
+void KeyboardMux::_keyOn(unsigned char key, bool half) {
+  if(half) {
+    this->half_on[key] = this->time;
+  } else {
+    (this->keyOn)(key, this->velocity(this->time-this->half_on[key]));
+  }
+}
+
+void KeyboardMux::_keyOff(unsigned char key, bool half) {
+  if(!half) { // Measuring goes backwards
+    this->half_off[key] = this->time;
+  } else {
+    (this->keyOff)(key, this->velocity(this->time-this->half_off[key]));
+  }
+}
+
+void KeyboardMux::bankChanged(unsigned char data) {
+  unsigned char pos;
+  unsigned char key;
+  unsigned char changed = data ^ this->bankstate[this->current_bank];
+  // Determine if the bit is in a primary bank for velocity timing.
+  unsigned char primary_bank = (this->current_bank & PRIMARY_BANK_MASK) == PRIMARY_BANK_BITS;
+
+  for(pos = 0; pos < 8; pos++) {
+    if(changed & 0x01 == 0x01) {
+      // This position has changed.
+      // Strip a bit of current bank and determine key number
+      key = ((this->current_bank>>1)*8)+(7-pos);
+
+      if(data & 0x01 == 0x01) {
+        this->_keyOff(key, (bool)primary_bank);
+      } else {
+        this->_keyOn(key, (bool)primary_bank);
+      }
+    }
+    changed = changed>>1;
+    data = data>>1;
+  }
 }
 
 void KeyboardMux::loop() {
+  this->time = micros();
 
   // Detect bank state changes
-  if(this->bankstate[this->current_bank] != PINB) {
-    (this->bankChanged)(this->current_bank, PINB^this->bankstate[this->current_bank]);
+  this->pinb = PINB; // Save the state and use the copy to avoid race conditions
+  if(this->bankstate[this->current_bank] != this->pinb) {
+    this->bankChanged(PINB);
+    // Save current bank state
+    this->bankstate[this->current_bank] = this->pinb;
   }
-
-  // Save current bank state
-  this->bankstate[this->current_bank] = PINB;
 
   // Increment bank counter
   this->current_bank ++;
