@@ -1,7 +1,10 @@
 /**
  *
  * test.ino
+ * 
  * Test use of the keyboard scanner library
+ * Uses the MidiUSB extension to send MIDI over USB to the host
+ * Reference: https://www.arduino.cc/en/Reference/MIDIUSB
  * 
  * Copyright (c) 2020 <morten@bzzt.no> 
  * 
