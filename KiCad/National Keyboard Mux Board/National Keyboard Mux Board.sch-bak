@@ -197,6 +197,17 @@ Wire Wire Line
 Wire Wire Line
 	8300 1200 8500 1200
 $Comp
+L Diode:BAV74LT1G D1
+U 1 1 609D2374
+P 2500 1250
+F 0 "D1" V 2546 1329 50  0000 L CNN
+F 1 "BAV74LT1G" V 2455 1329 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3100 1150 50  0001 C CNN
+F 3 "https://docs.rs-online.com/9220/0900766b8121b946.pdf" H 2000 1600 50  0001 C CNN
+	1    2500 1250
+	0    -1   -1   0   
+$EndComp
+$Comp
 L Connector:Conn_01x01_Female J2
 U 1 1 5E7A36F2
 P 1950 1500
@@ -245,7 +256,7 @@ F 1 "BAV74LT1G" V 2455 2079 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 3100 1900 50  0001 C CNN
 F 3 "https://docs.rs-online.com/9220/0900766b8121b946.pdf" H 2000 2350 50  0001 C CNN
 	1    2500 2000
-	0    -1   1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Connector:Conn_01x01_Female J4
@@ -280,7 +291,7 @@ F 1 "BAV74LT1G" V 2455 2829 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 3100 2650 50  0001 C CNN
 F 3 "https://docs.rs-online.com/9220/0900766b8121b946.pdf" H 2000 3100 50  0001 C CNN
 	1    2500 2750
-	0    -1   1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Connector:Conn_01x01_Female J6
@@ -350,7 +361,7 @@ F 1 "BAV74LT1G" V 2455 4329 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 3100 4150 50  0001 C CNN
 F 3 "https://docs.rs-online.com/9220/0900766b8121b946.pdf" H 2000 4600 50  0001 C CNN
 	1    2500 4250
-	0    -1   1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L Connector:Conn_01x01_Female J10
@@ -723,15 +734,4 @@ Wire Wire Line
 	2150 6250 2500 6250
 Wire Wire Line
 	2150 6750 2500 6750
-$Comp
-L Diode:BAV74LT1G D1
-U 1 1 609D2374
-P 2500 1250
-F 0 "D1" V 2546 1329 50  0000 L CNN
-F 1 "BAV74LT1G" V 2455 1329 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 3100 1150 50  0001 C CNN
-F 3 "https://docs.rs-online.com/9220/0900766b8121b946.pdf" H 2000 1600 50  0001 C CNN
-	1    2500 1250
-	0    -1   1    0   
-$EndComp
 $EndSCHEMATC
