@@ -1,4 +1,5 @@
 (sym_lib_table
   (lib (name project)(type Legacy)(uri ${KIPRJMOD}/lib_sch/project.lib)(options "")(descr ""))
   (lib (name arduino)(type Legacy)(uri ${KIPRJMOD}/lib_sch/arduino.lib)(options "")(descr ""))
+  (lib (name project-rescue)(type Legacy)(uri ${KIPRJMOD}/project-rescue.lib)(options "")(descr ""))
 )

@@ -1014,7 +1014,7 @@ GND
 Text Label 10350 1400 2    60   ~ 0
 +5V
 $Comp
-L Connector:USB_B J2
+L project-rescue:USB_B-Connector J2
 U 1 1 5E95986C
 P 4600 2650
 F 0 "J2" H 4655 3117 50  0000 C CNN

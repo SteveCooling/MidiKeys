@@ -19,7 +19,7 @@
 #define PRIMARY_BANK_MASK 0x01
 #define PRIMARY_BANK_BITS 0x01
 
-#include <math.h>
+//#include <math.h>
 #include "KeyboardMux.h"
 #include "MIDIUSB.h"
 #include "velocity.h"
