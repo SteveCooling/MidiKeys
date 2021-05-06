@@ -1,0 +1,876 @@
+EESchema Schematic File Version 4
+LIBS:National Keyboard Mux Board-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Jumper:Jumper_2_Open JP1
+U 1 1 5E7A20EA
+P 6750 2500
+F 0 "JP1" H 6750 2735 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 2644 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 2500 50  0001 C CNN
+F 3 "" H 6750 2500 50  0001 C CNN
+	1    6750 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J1
+U 1 1 5E7A22A6
+P 2350 2000
+F 0 "J1" H 2244 1775 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 1866 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 2000 50  0001 C CNN
+F 3 "~" H 2350 2000 50  0001 C CNN
+	1    2350 2000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 5E7A2630
+P 3100 2000
+F 0 "D1" H 3100 1784 50  0000 C CNN
+F 1 "1N4148" H 3100 1875 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 2000 50  0001 C CNN
+F 3 "~" H 3100 2000 50  0001 C CNN
+	1    3100 2000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x08_Odd_Even J19
+U 1 1 5E7A2C39
+P 4650 4200
+F 0 "J19" H 4700 4717 50  0000 C CNN
+F 1 "Conn_02x08_Odd_Even" H 4700 4626 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x08_P2.54mm_Vertical" H 4650 4200 50  0001 C CNN
+F 3 "~" H 4650 4200 50  0001 C CNN
+	1    4650 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J2
+U 1 1 5E7A36F2
+P 2350 2300
+F 0 "J2" H 2244 2075 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 2166 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 2300 50  0001 C CNN
+F 3 "~" H 2350 2300 50  0001 C CNN
+	1    2350 2300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J3
+U 1 1 5E7A3EDE
+P 2350 2600
+F 0 "J3" H 2244 2375 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 2466 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 2600 50  0001 C CNN
+F 3 "~" H 2350 2600 50  0001 C CNN
+	1    2350 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D2
+U 1 1 5E7A4280
+P 3100 2300
+F 0 "D2" H 3100 2084 50  0000 C CNN
+F 1 "D" H 3100 2175 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 2300 50  0001 C CNN
+F 3 "~" H 3100 2300 50  0001 C CNN
+	1    3100 2300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D3
+U 1 1 5E7A42E8
+P 3100 2600
+F 0 "D3" H 3100 2384 50  0000 C CNN
+F 1 "D" H 3100 2475 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 2600 50  0001 C CNN
+F 3 "~" H 3100 2600 50  0001 C CNN
+	1    3100 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J4
+U 1 1 5E7A439A
+P 2350 2900
+F 0 "J4" H 2244 2675 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 2766 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 2900 50  0001 C CNN
+F 3 "~" H 2350 2900 50  0001 C CNN
+	1    2350 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D4
+U 1 1 5E7A4486
+P 3100 2900
+F 0 "D4" H 3100 2684 50  0000 C CNN
+F 1 "D" H 3100 2775 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 2900 50  0001 C CNN
+F 3 "~" H 3100 2900 50  0001 C CNN
+	1    3100 2900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J5
+U 1 1 5E7A4576
+P 2350 3200
+F 0 "J5" H 2244 2975 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 3066 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 3200 50  0001 C CNN
+F 3 "~" H 2350 3200 50  0001 C CNN
+	1    2350 3200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D5
+U 1 1 5E7A4643
+P 3100 3200
+F 0 "D5" H 3100 2984 50  0000 C CNN
+F 1 "D" H 3100 3075 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 3200 50  0001 C CNN
+F 3 "~" H 3100 3200 50  0001 C CNN
+	1    3100 3200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J6
+U 1 1 5E7A48DD
+P 2350 3500
+F 0 "J6" H 2244 3275 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 3366 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 3500 50  0001 C CNN
+F 3 "~" H 2350 3500 50  0001 C CNN
+	1    2350 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D6
+U 1 1 5E7A49F3
+P 3100 3500
+F 0 "D6" H 3100 3284 50  0000 C CNN
+F 1 "D" H 3100 3375 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 3500 50  0001 C CNN
+F 3 "~" H 3100 3500 50  0001 C CNN
+	1    3100 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J7
+U 1 1 5E7A5575
+P 2350 3800
+F 0 "J7" H 2244 3575 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 3666 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 3800 50  0001 C CNN
+F 3 "~" H 2350 3800 50  0001 C CNN
+	1    2350 3800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D7
+U 1 1 5E7A5695
+P 3100 3800
+F 0 "D7" H 3100 3584 50  0000 C CNN
+F 1 "D" H 3100 3675 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 3800 50  0001 C CNN
+F 3 "~" H 3100 3800 50  0001 C CNN
+	1    3100 3800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J8
+U 1 1 5E7A5A39
+P 2350 4100
+F 0 "J8" H 2244 3875 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 3966 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 4100 50  0001 C CNN
+F 3 "~" H 2350 4100 50  0001 C CNN
+	1    2350 4100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D8
+U 1 1 5E7A5B90
+P 3100 4100
+F 0 "D8" H 3100 3884 50  0000 C CNN
+F 1 "D" H 3100 3975 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 4100 50  0001 C CNN
+F 3 "~" H 3100 4100 50  0001 C CNN
+	1    3100 4100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J18
+U 1 1 5E7A5DAB
+P 7550 2500
+F 0 "J18" H 7577 2526 50  0000 L CNN
+F 1 "Conn_01x01_Female" H 7577 2435 50  0000 L CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 7550 2500 50  0001 C CNN
+F 3 "~" H 7550 2500 50  0001 C CNN
+	1    7550 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J9
+U 1 1 5E7A8103
+P 2350 4400
+F 0 "J9" H 2244 4175 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 4266 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 4400 50  0001 C CNN
+F 3 "~" H 2350 4400 50  0001 C CNN
+	1    2350 4400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J10
+U 1 1 5E7A81B5
+P 2350 4700
+F 0 "J10" H 2244 4475 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 4566 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 4700 50  0001 C CNN
+F 3 "~" H 2350 4700 50  0001 C CNN
+	1    2350 4700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J11
+U 1 1 5E7A829B
+P 2350 5000
+F 0 "J11" H 2244 4775 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 4866 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 5000 50  0001 C CNN
+F 3 "~" H 2350 5000 50  0001 C CNN
+	1    2350 5000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J12
+U 1 1 5E7A835D
+P 2350 5300
+F 0 "J12" H 2244 5075 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 5166 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 5300 50  0001 C CNN
+F 3 "~" H 2350 5300 50  0001 C CNN
+	1    2350 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J13
+U 1 1 5E7A86AB
+P 2350 5600
+F 0 "J13" H 2244 5375 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 5466 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 5600 50  0001 C CNN
+F 3 "~" H 2350 5600 50  0001 C CNN
+	1    2350 5600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J14
+U 1 1 5E7A8796
+P 2350 5900
+F 0 "J14" H 2244 5675 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 5766 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 5900 50  0001 C CNN
+F 3 "~" H 2350 5900 50  0001 C CNN
+	1    2350 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J15
+U 1 1 5E7A88A4
+P 2350 6200
+F 0 "J15" H 2244 5975 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 6066 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 6200 50  0001 C CNN
+F 3 "~" H 2350 6200 50  0001 C CNN
+	1    2350 6200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J16
+U 1 1 5E7A8986
+P 2350 6500
+F 0 "J16" H 2244 6275 50  0000 C CNN
+F 1 "Conn_01x01_Female" H 2244 6366 50  0000 C CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 2350 6500 50  0001 C CNN
+F 3 "~" H 2350 6500 50  0001 C CNN
+	1    2350 6500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D9
+U 1 1 5E7AB38E
+P 3100 4400
+F 0 "D9" H 3100 4184 50  0000 C CNN
+F 1 "D" H 3100 4275 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 4400 50  0001 C CNN
+F 3 "~" H 3100 4400 50  0001 C CNN
+	1    3100 4400
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D10
+U 1 1 5E7AB4F4
+P 3100 4700
+F 0 "D10" H 3100 4484 50  0000 C CNN
+F 1 "D" H 3100 4575 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 4700 50  0001 C CNN
+F 3 "~" H 3100 4700 50  0001 C CNN
+	1    3100 4700
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D11
+U 1 1 5E7AB5EE
+P 3100 5000
+F 0 "D11" H 3100 4784 50  0000 C CNN
+F 1 "D" H 3100 4875 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 5000 50  0001 C CNN
+F 3 "~" H 3100 5000 50  0001 C CNN
+	1    3100 5000
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D12
+U 1 1 5E7AB72C
+P 3100 5300
+F 0 "D12" H 3100 5084 50  0000 C CNN
+F 1 "D" H 3100 5175 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 5300 50  0001 C CNN
+F 3 "~" H 3100 5300 50  0001 C CNN
+	1    3100 5300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D13
+U 1 1 5E7AB876
+P 3100 5600
+F 0 "D13" H 3100 5384 50  0000 C CNN
+F 1 "D" H 3100 5475 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 5600 50  0001 C CNN
+F 3 "~" H 3100 5600 50  0001 C CNN
+	1    3100 5600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D14
+U 1 1 5E7AB988
+P 3100 5900
+F 0 "D14" H 3100 5684 50  0000 C CNN
+F 1 "D" H 3100 5775 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 5900 50  0001 C CNN
+F 3 "~" H 3100 5900 50  0001 C CNN
+	1    3100 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D15
+U 1 1 5E7ABAA2
+P 3100 6200
+F 0 "D15" H 3100 5984 50  0000 C CNN
+F 1 "D" H 3100 6075 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 6200 50  0001 C CNN
+F 3 "~" H 3100 6200 50  0001 C CNN
+	1    3100 6200
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:D D16
+U 1 1 5E7ABC73
+P 3100 6500
+F 0 "D16" H 3100 6284 50  0000 C CNN
+F 1 "D" H 3100 6375 50  0000 C CNN
+F 2 "Diode_THT:D_DO-34_SOD68_P7.62mm_Horizontal" H 3100 6500 50  0001 C CNN
+F 3 "~" H 3100 6500 50  0001 C CNN
+	1    3100 6500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x01_Female J17
+U 1 1 5E7AEAD9
+P 7550 3600
+F 0 "J17" H 7577 3626 50  0000 L CNN
+F 1 "Conn_01x01_Female" H 7577 3535 50  0000 L CNN
+F 2 "Connector_Pin:PinSlot_1x3.5mm_Flat" H 7550 3600 50  0001 C CNN
+F 3 "~" H 7550 3600 50  0001 C CNN
+	1    7550 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 2000 2950 2000
+Wire Wire Line
+	2550 2300 2950 2300
+Wire Wire Line
+	2550 2600 2950 2600
+Wire Wire Line
+	2550 2900 2950 2900
+Wire Wire Line
+	2550 3200 2950 3200
+Wire Wire Line
+	2550 3500 2950 3500
+Wire Wire Line
+	2550 3800 2950 3800
+Wire Wire Line
+	2550 4100 2950 4100
+Wire Wire Line
+	2550 4400 2950 4400
+Wire Wire Line
+	2550 4700 2950 4700
+Wire Wire Line
+	2550 5000 2950 5000
+Wire Wire Line
+	2550 5300 2950 5300
+Wire Wire Line
+	2550 5600 2950 5600
+Wire Wire Line
+	2550 5900 2950 5900
+Wire Wire Line
+	2550 6200 2950 6200
+Wire Wire Line
+	2550 6500 2950 6500
+Wire Wire Line
+	3250 2000 3350 2000
+Wire Wire Line
+	3350 2000 3350 2300
+Wire Wire Line
+	3350 2300 3250 2300
+Wire Wire Line
+	3250 2600 3350 2600
+Wire Wire Line
+	3350 2600 3350 2900
+Wire Wire Line
+	3350 2900 3250 2900
+Wire Wire Line
+	3250 3200 3350 3200
+Wire Wire Line
+	3350 3200 3350 3500
+Wire Wire Line
+	3350 3500 3250 3500
+Wire Wire Line
+	3250 3800 3350 3800
+Wire Wire Line
+	3350 3800 3350 4100
+Wire Wire Line
+	3350 4100 3250 4100
+Wire Wire Line
+	3250 4400 3350 4400
+Wire Wire Line
+	3350 4400 3350 4700
+Wire Wire Line
+	3350 4700 3250 4700
+Wire Wire Line
+	3250 5000 3350 5000
+Wire Wire Line
+	3350 5000 3350 5300
+Wire Wire Line
+	3350 5300 3250 5300
+Wire Wire Line
+	3250 5600 3350 5600
+Wire Wire Line
+	3350 5600 3350 5900
+Wire Wire Line
+	3350 5900 3250 5900
+Wire Wire Line
+	3250 6200 3350 6200
+Wire Wire Line
+	3350 6200 3350 6500
+Wire Wire Line
+	3350 6500 3250 6500
+Wire Wire Line
+	4450 4300 3350 4300
+Wire Wire Line
+	3350 4300 3350 4400
+Connection ~ 3350 4400
+Wire Wire Line
+	3350 4100 3350 4200
+Wire Wire Line
+	3350 4200 4450 4200
+Connection ~ 3350 4100
+Wire Wire Line
+	3350 3500 3450 3500
+Wire Wire Line
+	3450 3500 3450 4100
+Wire Wire Line
+	3450 4100 4450 4100
+Connection ~ 3350 3500
+Wire Wire Line
+	3350 2900 3550 2900
+Wire Wire Line
+	3550 2900 3550 4000
+Wire Wire Line
+	3550 4000 4450 4000
+Connection ~ 3350 2900
+Wire Wire Line
+	3350 2300 3650 2300
+Wire Wire Line
+	3650 2300 3650 3900
+Wire Wire Line
+	3650 3900 4450 3900
+Connection ~ 3350 2300
+Wire Wire Line
+	3350 5000 3450 5000
+Wire Wire Line
+	3450 5000 3450 4400
+Wire Wire Line
+	3450 4400 4450 4400
+Connection ~ 3350 5000
+Wire Wire Line
+	3350 5600 3550 5600
+Wire Wire Line
+	3550 5600 3550 4500
+Wire Wire Line
+	3550 4500 4450 4500
+Connection ~ 3350 5600
+Wire Wire Line
+	3650 6200 3650 4600
+Wire Wire Line
+	3650 4600 4450 4600
+Wire Wire Line
+	3350 6200 3650 6200
+Connection ~ 3350 6200
+$Comp
+L Jumper:Jumper_2_Open JP2
+U 1 1 5E7CF5A1
+P 6750 2600
+F 0 "JP2" H 6750 2835 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 2744 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 2600 50  0001 C CNN
+F 3 "" H 6750 2600 50  0001 C CNN
+	1    6750 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP3
+U 1 1 5E7CF8ED
+P 6750 2700
+F 0 "JP3" H 6750 2935 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 2844 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 2700 50  0001 C CNN
+F 3 "" H 6750 2700 50  0001 C CNN
+	1    6750 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP4
+U 1 1 5E7CF993
+P 6750 2800
+F 0 "JP4" H 6750 3035 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 2944 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 2800 50  0001 C CNN
+F 3 "" H 6750 2800 50  0001 C CNN
+	1    6750 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP5
+U 1 1 5E7CFA3D
+P 6750 2900
+F 0 "JP5" H 6750 3135 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 3044 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 2900 50  0001 C CNN
+F 3 "" H 6750 2900 50  0001 C CNN
+	1    6750 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP6
+U 1 1 5E7CFAEB
+P 6750 3000
+F 0 "JP6" H 6750 3235 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 3144 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 3000 50  0001 C CNN
+F 3 "" H 6750 3000 50  0001 C CNN
+	1    6750 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP7
+U 1 1 5E7CFB9D
+P 6750 3100
+F 0 "JP7" H 6750 3335 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 3244 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 3100 50  0001 C CNN
+F 3 "" H 6750 3100 50  0001 C CNN
+	1    6750 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP8
+U 1 1 5E7CFCD4
+P 6750 3200
+F 0 "JP8" H 6750 3435 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 3344 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 3200 50  0001 C CNN
+F 3 "" H 6750 3200 50  0001 C CNN
+	1    6750 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 2500 5250 2500
+Wire Wire Line
+	5250 2500 5250 3600
+Wire Wire Line
+	5250 3900 4950 3900
+Wire Wire Line
+	4950 4000 5350 4000
+Wire Wire Line
+	5350 4000 5350 3700
+Wire Wire Line
+	5350 2600 6550 2600
+Wire Wire Line
+	6550 2700 5450 2700
+Wire Wire Line
+	5450 2700 5450 3800
+Wire Wire Line
+	5450 4100 4950 4100
+Wire Wire Line
+	4950 4200 5550 4200
+Wire Wire Line
+	5550 4200 5550 3900
+Wire Wire Line
+	5550 2800 6550 2800
+Wire Wire Line
+	6550 2900 5650 2900
+Wire Wire Line
+	5650 2900 5650 4000
+Wire Wire Line
+	5650 4300 4950 4300
+Wire Wire Line
+	4950 4400 5750 4400
+Wire Wire Line
+	5750 4400 5750 4100
+Wire Wire Line
+	5750 3000 6550 3000
+Wire Wire Line
+	6550 3100 5850 3100
+Wire Wire Line
+	5850 3100 5850 4200
+Wire Wire Line
+	5850 4500 4950 4500
+Wire Wire Line
+	4950 4600 5950 4600
+Wire Wire Line
+	5950 4600 5950 4300
+Wire Wire Line
+	5950 3200 6550 3200
+Wire Wire Line
+	6950 2500 7150 2500
+Wire Wire Line
+	7150 2500 7150 2600
+Wire Wire Line
+	7150 3200 6950 3200
+Wire Wire Line
+	6950 3100 7150 3100
+Connection ~ 7150 3100
+Wire Wire Line
+	7150 3100 7150 3200
+Wire Wire Line
+	6950 3000 7150 3000
+Connection ~ 7150 3000
+Wire Wire Line
+	7150 3000 7150 3100
+Wire Wire Line
+	6950 2900 7150 2900
+Connection ~ 7150 2900
+Wire Wire Line
+	7150 2900 7150 3000
+Wire Wire Line
+	6950 2800 7150 2800
+Connection ~ 7150 2800
+Wire Wire Line
+	7150 2800 7150 2900
+Wire Wire Line
+	6950 2700 7150 2700
+Connection ~ 7150 2700
+Wire Wire Line
+	7150 2700 7150 2800
+Wire Wire Line
+	6950 2600 7150 2600
+Connection ~ 7150 2600
+Wire Wire Line
+	7150 2600 7150 2700
+Wire Wire Line
+	7150 2500 7350 2500
+Connection ~ 7150 2500
+$Comp
+L Jumper:Jumper_2_Open JP9
+U 1 1 5E7F40B9
+P 6750 3600
+F 0 "JP9" H 6750 3835 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 3744 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 3600 50  0001 C CNN
+F 3 "" H 6750 3600 50  0001 C CNN
+	1    6750 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP10
+U 1 1 5E7F473F
+P 6750 3700
+F 0 "JP10" H 6750 3935 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 3844 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 3700 50  0001 C CNN
+F 3 "" H 6750 3700 50  0001 C CNN
+	1    6750 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP11
+U 1 1 5E7F4971
+P 6750 3800
+F 0 "JP11" H 6750 4035 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 3944 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 3800 50  0001 C CNN
+F 3 "" H 6750 3800 50  0001 C CNN
+	1    6750 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP12
+U 1 1 5E7F4AF3
+P 6750 3900
+F 0 "JP12" H 6750 4135 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 4044 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 3900 50  0001 C CNN
+F 3 "" H 6750 3900 50  0001 C CNN
+	1    6750 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP13
+U 1 1 5E7F4C7D
+P 6750 4000
+F 0 "JP13" H 6750 4235 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 4144 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 4000 50  0001 C CNN
+F 3 "" H 6750 4000 50  0001 C CNN
+	1    6750 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP14
+U 1 1 5E7F4D4B
+P 6750 4100
+F 0 "JP14" H 6750 4335 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 4244 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 4100 50  0001 C CNN
+F 3 "" H 6750 4100 50  0001 C CNN
+	1    6750 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP15
+U 1 1 5E7F4E81
+P 6750 4200
+F 0 "JP15" H 6750 4435 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 4344 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 4200 50  0001 C CNN
+F 3 "" H 6750 4200 50  0001 C CNN
+	1    6750 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Jumper:Jumper_2_Open JP16
+U 1 1 5E7F4FBD
+P 6750 4300
+F 0 "JP16" H 6750 4535 50  0000 C CNN
+F 1 "Jumper_2_Open" H 6750 4444 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm" H 6750 4300 50  0001 C CNN
+F 3 "" H 6750 4300 50  0001 C CNN
+	1    6750 4300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6950 3600 7150 3600
+Wire Wire Line
+	7150 3600 7150 3700
+Wire Wire Line
+	7150 4300 6950 4300
+Wire Wire Line
+	6950 4200 7150 4200
+Connection ~ 7150 4200
+Wire Wire Line
+	7150 4200 7150 4300
+Wire Wire Line
+	7150 4100 6950 4100
+Connection ~ 7150 4100
+Wire Wire Line
+	7150 4100 7150 4200
+Wire Wire Line
+	6950 4000 7150 4000
+Connection ~ 7150 4000
+Wire Wire Line
+	7150 4000 7150 4100
+Wire Wire Line
+	6950 3900 7150 3900
+Connection ~ 7150 3900
+Wire Wire Line
+	7150 3900 7150 4000
+Wire Wire Line
+	6950 3800 7150 3800
+Connection ~ 7150 3800
+Wire Wire Line
+	7150 3800 7150 3900
+Wire Wire Line
+	6950 3700 7150 3700
+Connection ~ 7150 3700
+Wire Wire Line
+	7150 3700 7150 3800
+Wire Wire Line
+	6550 3600 5250 3600
+Connection ~ 5250 3600
+Wire Wire Line
+	5250 3600 5250 3900
+Wire Wire Line
+	6550 3700 5350 3700
+Connection ~ 5350 3700
+Wire Wire Line
+	5350 3700 5350 2600
+Wire Wire Line
+	6550 3800 5450 3800
+Connection ~ 5450 3800
+Wire Wire Line
+	5450 3800 5450 4100
+Wire Wire Line
+	6550 3900 5550 3900
+Connection ~ 5550 3900
+Wire Wire Line
+	5550 3900 5550 2800
+Wire Wire Line
+	6550 4000 5650 4000
+Connection ~ 5650 4000
+Wire Wire Line
+	5650 4000 5650 4300
+Wire Wire Line
+	6550 4100 5750 4100
+Connection ~ 5750 4100
+Wire Wire Line
+	5750 4100 5750 3000
+Wire Wire Line
+	6550 4200 5850 4200
+Connection ~ 5850 4200
+Wire Wire Line
+	5850 4200 5850 4500
+Wire Wire Line
+	6550 4300 5950 4300
+Connection ~ 5950 4300
+Wire Wire Line
+	5950 4300 5950 3200
+Wire Wire Line
+	7350 3600 7150 3600
+Connection ~ 7150 3600
+$EndSCHEMATC
