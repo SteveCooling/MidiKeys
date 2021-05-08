@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/Users/mortenj/src/MidiKeys/KiCad/National Keyboard Mux Board/National Keyboard Mux Board.sch</source>
+    <date>2021 May 07, Friday 19:36:52</date>
+    <tool>Eeschema (5.1.7-0-10_14)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>National Keyboard Mux Board.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="JP1">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7A20EA</tstamp>
+    </comp>
+    <comp ref="J19">
+      <value>Conn_02x08_Odd_Even</value>
+      <footprint>Connector_IDC:IDC-Header_2x08_P2.54mm_Vertical</footprint>
+      <datasheet>~</datasheet>
+      <fields>
+        <field name="LCSC">C492443</field>
+      </fields>
+      <libsource lib="Connector_Generic" part="Conn_02x08_Odd_Even" description="Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7A2C39</tstamp>
+    </comp>
+    <comp ref="J18">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7A5DAB</tstamp>
+    </comp>
+    <comp ref="J17">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7AEAD9</tstamp>
+    </comp>
+    <comp ref="JP2">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7CF5A1</tstamp>
+    </comp>
+    <comp ref="JP3">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7CF8ED</tstamp>
+    </comp>
+    <comp ref="JP4">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7CF993</tstamp>
+    </comp>
+    <comp ref="JP5">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7CFA3D</tstamp>
+    </comp>
+    <comp ref="JP6">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7CFAEB</tstamp>
+    </comp>
+    <comp ref="JP7">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7CFB9D</tstamp>
+    </comp>
+    <comp ref="JP8">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7CFCD4</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7A36F2</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5E7A22A6</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A48F2A</tstamp>
+    </comp>
+    <comp ref="J4">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A48F30</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A48F36</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A4D38A</tstamp>
+    </comp>
+    <comp ref="J6">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A4D390</tstamp>
+    </comp>
+    <comp ref="J5">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A4D396</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A51478</tstamp>
+    </comp>
+    <comp ref="J8">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A5147E</tstamp>
+    </comp>
+    <comp ref="J7">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A51484</tstamp>
+    </comp>
+    <comp ref="D5">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A55B7A</tstamp>
+    </comp>
+    <comp ref="J10">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A55B80</tstamp>
+    </comp>
+    <comp ref="J9">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A55B86</tstamp>
+    </comp>
+    <comp ref="D6">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A5A598</tstamp>
+    </comp>
+    <comp ref="J12">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A5A59E</tstamp>
+    </comp>
+    <comp ref="J11">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A5A5A4</tstamp>
+    </comp>
+    <comp ref="D7">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A5F4FA</tstamp>
+    </comp>
+    <comp ref="J14">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A5F500</tstamp>
+    </comp>
+    <comp ref="J13">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A5F506</tstamp>
+    </comp>
+    <comp ref="D8">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A64C1A</tstamp>
+    </comp>
+    <comp ref="J16">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A64C20</tstamp>
+    </comp>
+    <comp ref="J15">
+      <value>Conn_01x01_Female</value>
+      <footprint>Connector_Pin:PinSlot_1x3.5mm_Flat</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x01_Female" description="Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60A64C26</tstamp>
+    </comp>
+    <comp ref="JP9">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9A3</tstamp>
+    </comp>
+    <comp ref="JP10">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9A9</tstamp>
+    </comp>
+    <comp ref="JP11">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9AF</tstamp>
+    </comp>
+    <comp ref="JP12">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9B5</tstamp>
+    </comp>
+    <comp ref="JP13">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9BB</tstamp>
+    </comp>
+    <comp ref="JP14">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9C1</tstamp>
+    </comp>
+    <comp ref="JP15">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9C7</tstamp>
+    </comp>
+    <comp ref="JP16">
+      <value>Jumper_2_Open</value>
+      <footprint>Jumper:SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Jumper" part="Jumper_2_Open" description="Jumper, 2-pole, open"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>60BFA9CD</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>BAV74LT1G</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23</footprint>
+      <datasheet>https://docs.rs-online.com/9220/0900766b8121b946.pdf</datasheet>
+      <fields>
+        <field name="LCSC">C82481</field>
+      </fields>
+      <libsource lib="Diode" part="BAV74LT1G" description="Monolithic Dual Switching Diode&#xD;Switching Diode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>609D2374</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x01_Female">
+      <description>Generic connector, single row, 01x01, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x01_Female</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_02x08_Odd_Even">
+      <description>Generic connector, double row, 02x08, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_2x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_02x08_Odd_Even</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+        <pin num="6" name="Pin_6" type="passive"/>
+        <pin num="7" name="Pin_7" type="passive"/>
+        <pin num="8" name="Pin_8" type="passive"/>
+        <pin num="9" name="Pin_9" type="passive"/>
+        <pin num="10" name="Pin_10" type="passive"/>
+        <pin num="11" name="Pin_11" type="passive"/>
+        <pin num="12" name="Pin_12" type="passive"/>
+        <pin num="13" name="Pin_13" type="passive"/>
+        <pin num="14" name="Pin_14" type="passive"/>
+        <pin num="15" name="Pin_15" type="passive"/>
+        <pin num="16" name="Pin_16" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Diode" part="BAV74LT1G">
+      <aliases>
+        <alias>BAV74</alias>
+      </aliases>
+      <description>Monolithic Dual Switching Diode&#xD;Switching Diode</description>
+      <docs>https://docs.rs-online.com/9220/0900766b8121b946.pdf</docs>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">BAV74LT1G</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23</field>
+      </fields>
+      <pins>
+        <pin num="1" name="ANODE_1" type="passive"/>
+        <pin num="2" name="ANODE_2" type="passive"/>
+        <pin num="3" name="CATHODE" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Jumper" part="Jumper_2_Open">
+      <description>Jumper, 2-pole, open</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Jumper*</fp>
+        <fp>TestPoint*2Pads*</fp>
+        <fp>TestPoint*Bridge*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Jumper_2_Open</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/Library/Application Support/kicad/library/Connector.lib</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>/Library/Application Support/kicad/library/Connector_Generic.lib</uri>
+    </library>
+    <library logical="Diode">
+      <uri>/Library/Application Support/kicad/library/Diode.lib</uri>
+    </library>
+    <library logical="Jumper">
+      <uri>/Library/Application Support/kicad/library/Jumper.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/KEY1">
+      <node ref="D1" pin="3"/>
+      <node ref="J19" pin="1"/>
+    </net>
+    <net code="2" name="/GROUP5">
+      <node ref="J19" pin="10"/>
+      <node ref="JP13" pin="1"/>
+      <node ref="JP5" pin="1"/>
+    </net>
+    <net code="3" name="/KEY6">
+      <node ref="J19" pin="11"/>
+      <node ref="D6" pin="3"/>
+    </net>
+    <net code="4" name="/GROUP6">
+      <node ref="J19" pin="12"/>
+      <node ref="JP14" pin="1"/>
+      <node ref="JP6" pin="1"/>
+    </net>
+    <net code="5" name="/KEY7">
+      <node ref="D7" pin="3"/>
+      <node ref="J19" pin="13"/>
+    </net>
+    <net code="6" name="/GROUP7">
+      <node ref="JP7" pin="1"/>
+      <node ref="JP15" pin="1"/>
+      <node ref="J19" pin="14"/>
+    </net>
+    <net code="7" name="/KEY8">
+      <node ref="D8" pin="3"/>
+      <node ref="J19" pin="15"/>
+    </net>
+    <net code="8" name="/GROUP8">
+      <node ref="J19" pin="16"/>
+      <node ref="JP8" pin="1"/>
+      <node ref="JP16" pin="1"/>
+    </net>
+    <net code="9" name="/GROUP1">
+      <node ref="JP1" pin="1"/>
+      <node ref="J19" pin="2"/>
+      <node ref="JP9" pin="1"/>
+    </net>
+    <net code="10" name="/KEY2">
+      <node ref="J19" pin="3"/>
+      <node ref="D2" pin="3"/>
+    </net>
+    <net code="11" name="/GROUP2">
+      <node ref="JP2" pin="1"/>
+      <node ref="JP10" pin="1"/>
+      <node ref="J19" pin="4"/>
+    </net>
+    <net code="12" name="/KEY3">
+      <node ref="D3" pin="3"/>
+      <node ref="J19" pin="5"/>
+    </net>
+    <net code="13" name="/GROUP3">
+      <node ref="JP11" pin="1"/>
+      <node ref="J19" pin="6"/>
+      <node ref="JP3" pin="1"/>
+    </net>
+    <net code="14" name="/KEY4">
+      <node ref="D4" pin="3"/>
+      <node ref="J19" pin="7"/>
+    </net>
+    <net code="15" name="/GROUP4">
+      <node ref="JP4" pin="1"/>
+      <node ref="J19" pin="8"/>
+      <node ref="JP12" pin="1"/>
+    </net>
+    <net code="16" name="/KEY5">
+      <node ref="J19" pin="9"/>
+      <node ref="D5" pin="3"/>
+    </net>
+    <net code="17" name="/COMMON_UPPER">
+      <node ref="JP13" pin="2"/>
+      <node ref="JP10" pin="2"/>
+      <node ref="JP16" pin="2"/>
+      <node ref="JP15" pin="2"/>
+      <node ref="JP14" pin="2"/>
+      <node ref="JP12" pin="2"/>
+      <node ref="JP11" pin="2"/>
+      <node ref="JP9" pin="2"/>
+      <node ref="J17" pin="1"/>
+    </net>
+    <net code="18" name="Net-(D1-Pad2)">
+      <node ref="J2" pin="1"/>
+      <node ref="D1" pin="2"/>
+    </net>
+    <net code="19" name="Net-(D1-Pad1)">
+      <node ref="J1" pin="1"/>
+      <node ref="D1" pin="1"/>
+    </net>
+    <net code="20" name="Net-(D2-Pad2)">
+      <node ref="J4" pin="1"/>
+      <node ref="D2" pin="2"/>
+    </net>
+    <net code="21" name="Net-(D2-Pad1)">
+      <node ref="J3" pin="1"/>
+      <node ref="D2" pin="1"/>
+    </net>
+    <net code="22" name="Net-(D3-Pad2)">
+      <node ref="J6" pin="1"/>
+      <node ref="D3" pin="2"/>
+    </net>
+    <net code="23" name="Net-(D3-Pad1)">
+      <node ref="J5" pin="1"/>
+      <node ref="D3" pin="1"/>
+    </net>
+    <net code="24" name="Net-(D4-Pad1)">
+      <node ref="J8" pin="1"/>
+      <node ref="D4" pin="1"/>
+    </net>
+    <net code="25" name="Net-(D4-Pad2)">
+      <node ref="J7" pin="1"/>
+      <node ref="D4" pin="2"/>
+    </net>
+    <net code="26" name="Net-(D5-Pad2)">
+      <node ref="D5" pin="2"/>
+      <node ref="J10" pin="1"/>
+    </net>
+    <net code="27" name="Net-(D5-Pad1)">
+      <node ref="J9" pin="1"/>
+      <node ref="D5" pin="1"/>
+    </net>
+    <net code="28" name="Net-(D6-Pad1)">
+      <node ref="J12" pin="1"/>
+      <node ref="D6" pin="1"/>
+    </net>
+    <net code="29" name="Net-(D6-Pad2)">
+      <node ref="J11" pin="1"/>
+      <node ref="D6" pin="2"/>
+    </net>
+    <net code="30" name="Net-(D7-Pad1)">
+      <node ref="D7" pin="1"/>
+      <node ref="J14" pin="1"/>
+    </net>
+    <net code="31" name="Net-(D7-Pad2)">
+      <node ref="J13" pin="1"/>
+      <node ref="D7" pin="2"/>
+    </net>
+    <net code="32" name="Net-(D8-Pad1)">
+      <node ref="D8" pin="1"/>
+      <node ref="J16" pin="1"/>
+    </net>
+    <net code="33" name="Net-(D8-Pad2)">
+      <node ref="D8" pin="2"/>
+      <node ref="J15" pin="1"/>
+    </net>
+    <net code="34" name="/COMMON_LOWER">
+      <node ref="JP3" pin="2"/>
+      <node ref="JP1" pin="2"/>
+      <node ref="JP4" pin="2"/>
+      <node ref="JP5" pin="2"/>
+      <node ref="JP6" pin="2"/>
+      <node ref="JP7" pin="2"/>
+      <node ref="JP8" pin="2"/>
+      <node ref="J18" pin="1"/>
+      <node ref="JP2" pin="2"/>
+    </net>
+  </nets>
+</export>
