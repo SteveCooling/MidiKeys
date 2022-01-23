@@ -21,7 +21,7 @@
 
 //#include <math.h>
 #include "KeyboardMux.h"
-#include "MIDIUSB.h"
+#include <MIDIUSB.h>
 #include "velocity.h"
 
 #define BLINKLED LED_BUILTIN
