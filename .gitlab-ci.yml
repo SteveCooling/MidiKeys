@@ -1,0 +1,3 @@
+include:
+  - KiCad/Prototype/.gitlab-ci.yml
+

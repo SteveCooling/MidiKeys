@@ -1,0 +1,49 @@
+### Gitlab CI/CD example for KiCad
+
+stages:
+  - checks
+  - gen_fab
+
+image:
+  name: setsoft/kicad_auto:latest
+
+erc:
+  stage: checks
+  script:
+    - cd KiCad/Prototype
+    - "kibot -s update_xml,run_drc -i"
+  rules:
+    - changes:
+      - "KiCad/Prototype/**.sch"
+      - "KiCad/Prototype/**.kibot.yaml"
+      - "KiCad/Prototype/.gitlab-ci.yml"
+      when: always
+
+drc:
+  stage: checks
+  script:
+    - cd KiCad/Prototype
+    - "[ -f *.kicad_pcb ] && kibot -s update_xml,run_erc -i"
+  rules:
+    - changes:
+      - "KiCad/Prototype/**.kicad_pcb"
+      - "KiCad/Prototype/**.kibot.yaml"
+      - "KiCad/Prototype/.gitlab-ci.yml"
+      when: always
+
+pcb_outputs:
+  stage: gen_fab
+  script:
+    - cd KiCad/Prototype
+    - "[ -f *.kicad_pcb ] && kibot -s all"
+  rules:
+    - changes:
+      - "KiCad/Prototype/**.kicad_pcb"
+      - "KiCad/Prototype/**.kibot.yaml"
+      - "KiCad/Prototype/.gitlab-ci.yml"
+      when: on_success
+  artifacts:
+    when: always
+    paths:
+      - KiCad/Prototype/JLCPCB/
+
