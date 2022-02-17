@@ -21,21 +21,30 @@
 
 class KeyboardMux {
   private:
+    bool portb_invert = true;
     int current_bank = 0;
     unsigned char bankstate[NUM_BANKS];
+    unsigned char state;
 
     void setupPortB();
     void setupPortF();
 
     //typedef void (KeyboardMux::*bankchange)(int bank, unsigned char data);
     //bankchange bankChanged;
-    void (*bankChanged)(int bank, unsigned char data);
+
+    // Bank has changes
+    void bankChanged();
+    // Called when a 
+    void (*noteOn)(unsigned char note);
+    void (*noteOff)(unsigned char note);
 
   public:
-    void init();
+    void init(bool pullup);
     void loop();
-    void setBankChanged(void (*bankChanged)(int bank, unsigned char data));
-    bool detectPullup();
+    //void setBankChanged(void (*bankChanged)(int bank, unsigned char data));
+    void setNoteOn(void (*noteOn)(unsigned char note));
+    void setNoteOff(void (*noteOff)(unsigned char note));
+    //bool detectPullup();
 };
 
 #endif

@@ -15,7 +15,8 @@
 #include <avr/io.h>
 #include <pins_arduino.h>
 
-void KeyboardMux::init() {
+void KeyboardMux::init(bool pullup) {
+  this->portb_invert = pullup;
   this->setupPortB();
   this->setupPortF();
 }
@@ -38,25 +39,51 @@ void KeyboardMux::setupPortF() {
   PORTF = 0x00;
 }
 
-void KeyboardMux::setBankChanged(void (*bankChanged)(int bank, unsigned char data)) {
-  this->bankChanged = bankChanged;
+void KeyboardMux::setNoteOn(void (*noteOn)(unsigned char note)) {
+  this->noteOn = noteOn;
 }
 
-bool KeyboardMux::detectPullup() {
-  return PINB >= 0x80;
+void KeyboardMux::setNoteOff(void (*noteOff)(unsigned char note)) {
+  this->noteOff = noteOff;
+}
+
+void KeyboardMux::bankChanged() {
+  unsigned char pos;
+  unsigned char note;
+
+  unsigned char datanow  = this->state;
+  unsigned char datalast = this->bankstate[this->current_bank];
+
+  for(pos = 0; pos < 8; pos++) {
+    // Compare last bit of datanow to datalast
+    if((datanow & 0x01) ^ (datalast & 0x01)) {
+      // This bit has flipped
+      // Calculate note number. TODO: make this configurable
+      note = this->current_bank - (pos * 6) - 173;
+
+      // Callbacks
+      if((datanow & 0x01) == 0x01) {
+        this->portb_invert ? noteOff(note) : noteOn(note);
+      } else {
+        this->portb_invert ? noteOn(note) : noteOff(note);
+      }
+    }
+    // Move on to the next bit in bank
+    datanow = datanow>>1;
+    datalast = datalast>>1;
+  }
 }
 
 void KeyboardMux::loop() {
 
   // Read current bank state
-  unsigned char state = PINB;
+  this->state = PINB;
 
-  if(this->bankstate[this->current_bank] != state) {
+  if(this->bankstate[this->current_bank] != this->state) {
     // State has changed
+    this->bankChanged();
     // Save current bank state
-    this->bankstate[this->current_bank] = state;
-    // Run callback
-    (this->bankChanged)(this->current_bank, state);
+    this->bankstate[this->current_bank] = this->state;
   }
 
   // Increment bank counter

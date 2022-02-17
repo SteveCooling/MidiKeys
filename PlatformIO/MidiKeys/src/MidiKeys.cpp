@@ -41,6 +41,8 @@ unsigned char note_velocity[NUM_NOTES];
 
 char transpose = 24;
 
+char playing = 0;
+
 float velocity_factor = 0.2;
 float velocity_curve  = 60;
 
@@ -112,29 +114,22 @@ void noteChanged(unsigned char note, bool primary_bank) {
 
 }
 
-void bankChanged(int bank, unsigned char data) {
-  unsigned char pos;
-  unsigned char note;
+void noteOn(unsigned char note) {
+  playing = note;
+  tone(SPEAKER, midi_freq[note]);
 
-  primary_bank = (bank & PRIMARY_BANK_MASK) == PRIMARY_BANK_BITS;
-
-  #ifdef SERIAL_DEBUG
-  Serial.print(bank);
-  Serial.print("\t");
-  Serial.println(data, HEX);
-  #endif
-
-  for(pos = 0; pos < 8; pos++) {
-    if((data & 0x01) == 0x01) {
-      note = bankAndPosToNote(bank, pos);
-      //Serial.print("\t");
-      //Serial.println(note, DEC);
-      // Now we know what note changed
-      noteChanged(note, primary_bank);
-    }
-    data = data>>1;
-  }
+  Serial.print("on\t");
+  Serial.println(note, DEC);
 }
+
+void noteOff(unsigned char note) {
+  if(playing == note)
+    noTone(SPEAKER);
+
+  Serial.print("off\t");
+  Serial.println(note, DEC);
+}
+
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -151,9 +146,12 @@ void setup() {
   Serial.begin(115200);
   #endif
   // initialize the keyboard mux reader
-  keyboard.init();
-  keyboard.setBankChanged(bankChanged);
+  keyboard.init(true);
 
+  keyboard.setNoteOn(noteOn);
+  keyboard.setNoteOff(noteOff);
+
+  // Ready beep
   tone(SPEAKER, 1000, 100);
 }
 
