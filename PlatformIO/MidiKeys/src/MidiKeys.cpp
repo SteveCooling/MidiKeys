@@ -12,7 +12,7 @@
 
 #define NUM_BANKS 16
 #define NUM_NOTES 128
-
+#define SIZE_NOTESTACK 64
 #define SERIAL_DEBUG
 
 // When this matches a primary key switch has been trigged
@@ -23,7 +23,11 @@
 
 //#include <math.h>
 #include "KeyboardMux.h"
+#include "Synth.h"
+
 #include <MIDIUSB.h>
+#include <EveryTimer.h>
+
 #include "velocity.h"
 #include "lut.h"
 
@@ -31,6 +35,9 @@
 #define MIDI_CHAN 0
 
 KeyboardMux keyboard;
+Synth synth;
+EveryTimer timer;
+
 bool primary_bank;
 
 // Timestamps for half events
@@ -41,7 +48,8 @@ unsigned char note_velocity[NUM_NOTES];
 
 char transpose = 24;
 
-char playing = 0;
+unsigned char playing = 0;
+unsigned char notestack[SIZE_NOTESTACK];
 
 float velocity_factor = 0.2;
 float velocity_curve  = 60;
@@ -115,21 +123,45 @@ void noteChanged(unsigned char note, bool primary_bank) {
 }
 
 void noteOn(unsigned char note) {
-  playing = note;
-  tone(SPEAKER, midi_freq[note]);
-
   Serial.print("on\t");
   Serial.println(note, DEC);
+
+  // Put the note in the stack
+  playing += 1;
+  notestack[playing] = note;
+
+  synth.noteOn(note, time/1000);
+
 }
 
 void noteOff(unsigned char note) {
-  if(playing == note)
-    noTone(SPEAKER);
-
   Serial.print("off\t");
   Serial.println(note, DEC);
+
+  for(unsigned char i = playing; i > 0; i --) {
+    // Remove note from stack
+    if(notestack[i] == note) {
+      notestack[i] = 0;
+      break;
+    }
+  }
+
+  for(unsigned char i = playing; i > 0; i --) {
+    if(notestack[i] != 0) {
+      playing = i;
+      synth.noteOn(notestack[i], time/1000);
+      return;
+    }
+  }
+
+  playing = 0;
+  synth.noteOff();
+
 }
 
+void cb() {
+  synth.update();
+}
 
 // the setup function runs once when you press reset or power the board
 void setup() {
@@ -140,6 +172,9 @@ void setup() {
     half_off[c] = 0;
     note_velocity[c] = 0;
   }
+
+  notestack[0] = 0;
+
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(BLINKLED, OUTPUT);
   #ifdef SERIAL_DEBUG
@@ -151,8 +186,10 @@ void setup() {
   keyboard.setNoteOn(noteOn);
   keyboard.setNoteOff(noteOff);
 
+  timer.Every(10, cb);
+
   // Ready beep
-  tone(SPEAKER, 1000, 100);
+  synth.init(SPEAKER);
 }
 
 // the loop function runs over and over again forever
@@ -160,5 +197,5 @@ void loop() {
   time = micros();
   keyboard.loop();
   MidiUSB.flush();
-
+  timer.Update();
 }
