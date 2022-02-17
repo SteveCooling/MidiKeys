@@ -48,13 +48,16 @@ bool KeyboardMux::detectPullup() {
 
 void KeyboardMux::loop() {
 
-  // Detect bank state changes
-  if(this->bankstate[this->current_bank] != PINB) {
-    (this->bankChanged)(this->current_bank, PINB^this->bankstate[this->current_bank]);
-  }
+  // Read current bank state
+  unsigned char state = PINB;
 
-  // Save current bank state
-  this->bankstate[this->current_bank] = PINB;
+  if(this->bankstate[this->current_bank] != state) {
+    // State has changed
+    // Save current bank state
+    this->bankstate[this->current_bank] = state;
+    // Run callback
+    (this->bankChanged)(this->current_bank, state);
+  }
 
   // Increment bank counter
   this->current_bank ++;

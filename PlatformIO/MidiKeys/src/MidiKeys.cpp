@@ -13,16 +13,19 @@
 #define NUM_BANKS 16
 #define NUM_NOTES 128
 
-//#define SERIAL_DEBUG
+#define SERIAL_DEBUG
 
 // When this matches a primary key switch has been trigged
 #define PRIMARY_BANK_MASK 0x01
 #define PRIMARY_BANK_BITS 0x01
 
+# define SPEAKER 12
+
 //#include <math.h>
 #include "KeyboardMux.h"
 #include <MIDIUSB.h>
 #include "velocity.h"
+#include "lut.h"
 
 #define BLINKLED LED_BUILTIN
 #define MIDI_CHAN 0
@@ -67,6 +70,9 @@ void noteOff(byte channel, byte pitch, byte velocity) {
 }
 
 void noteChanged(unsigned char note, bool primary_bank) {
+
+
+  /*
   if(note_velocity[note] == 0) {
     // Note is turning on
     if(primary_bank) {
@@ -102,7 +108,7 @@ void noteChanged(unsigned char note, bool primary_bank) {
       //Serial.println(" is half off");
       half_off[note] = time;
     }
-  }
+  }*/
 
 }
 
@@ -119,7 +125,7 @@ void bankChanged(int bank, unsigned char data) {
   #endif
 
   for(pos = 0; pos < 8; pos++) {
-    if(data & 0x01 == 0x01) {
+    if((data & 0x01) == 0x01) {
       note = bankAndPosToNote(bank, pos);
       //Serial.print("\t");
       //Serial.println(note, DEC);
@@ -147,6 +153,8 @@ void setup() {
   // initialize the keyboard mux reader
   keyboard.init();
   keyboard.setBankChanged(bankChanged);
+
+  tone(SPEAKER, 1000, 100);
 }
 
 // the loop function runs over and over again forever
