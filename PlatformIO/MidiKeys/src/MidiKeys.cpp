@@ -19,7 +19,8 @@
 #define PRIMARY_BANK_MASK 0x01
 #define PRIMARY_BANK_BITS 0x01
 
-# define SPEAKER 12
+#define SPEAKER 12
+#define ADCPIN 6
 
 //#include <math.h>
 #include "KeyboardMux.h"
@@ -159,6 +160,15 @@ void noteOff(unsigned char note) {
 
 }
 
+void analogValue(int input, int value) {
+  #ifdef SERIAL_DEBUG
+  Serial.print("Input: ");
+  Serial.print(input);
+  Serial.print(" now value: ");
+  Serial.println(value);
+  #endif
+}
+
 void cb() {
   synth.update();
 }
@@ -177,6 +187,7 @@ void setup() {
 
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(BLINKLED, OUTPUT);
+  pinMode(ADCPIN, INPUT);
   #ifdef SERIAL_DEBUG
   Serial.begin(115200);
   #endif
@@ -185,6 +196,7 @@ void setup() {
 
   keyboard.setNoteOn(noteOn);
   keyboard.setNoteOff(noteOff);
+  keyboard.setAdcRead(analogValue);
 
   timer.Every(10, cb);
 

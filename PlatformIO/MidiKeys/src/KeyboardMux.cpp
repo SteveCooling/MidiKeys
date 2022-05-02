@@ -14,6 +14,7 @@
 #include "KeyboardMux.h"
 #include <avr/io.h>
 #include <pins_arduino.h>
+#include <Arduino.h>
 
 void KeyboardMux::init(bool pullup) {
   this->portb_invert = pullup;
@@ -47,7 +48,7 @@ void KeyboardMux::setNoteOff(void (*noteOff)(unsigned char note)) {
   this->noteOff = noteOff;
 }
 
-void KeyboardMux::setAdcRead(void (*adcRead)(unsigned char input, int value)) {
+void KeyboardMux::setAdcRead(void (*adcRead)(int input, int value)) {
   this->adcRead = adcRead;
 }
 
@@ -78,6 +79,12 @@ void KeyboardMux::bankChanged() {
   }
 }
 
+void KeyboardMux::analogBankChanged() {
+  if (adcRead != nullptr) {
+    adcRead(this->current_bank, this->astate);
+  }
+}
+
 void KeyboardMux::loop() {
 
   // Read current bank state
@@ -97,6 +104,13 @@ void KeyboardMux::loop() {
   // ADC multiplexing
   this->adc_count ++;
   if(this->adc_count >= ADC_LATCH_COUNT) {
+    this->astate = analogRead(6); // Here be dragons. Check 32u4 datasheet for speedups.
+    if(this->adcstate[this->current_bank] != this->astate) {
+      this->analogBankChanged();
+    }
+    this->adcstate[this->current_bank] = this->astate;
+
+    // Prepare for the next analog reading
     this->adc_count = 0;
     // Select bank and set the ADC_LATCH bit
     PORTF = (this->current_bank<<4) | PORTF_BASE | ADC_LATCH;
