@@ -47,6 +47,10 @@ void KeyboardMux::setNoteOff(void (*noteOff)(unsigned char note)) {
   this->noteOff = noteOff;
 }
 
+void KeyboardMux::setAdcRead(void (*adcRead)(unsigned char input, int value)) {
+  this->adcRead = adcRead;
+}
+
 void KeyboardMux::bankChanged() {
   unsigned char pos;
   unsigned char note;
@@ -89,8 +93,16 @@ void KeyboardMux::loop() {
   // Increment bank counter
   this->current_bank ++;
   this->current_bank = 0x0f & this->current_bank;
+  
+  // ADC multiplexing
+  this->adc_count ++;
+  if(this->adc_count >= ADC_LATCH_COUNT) {
+    this->adc_count = 0;
+    // Select bank and set the ADC_LATCH bit
+    PORTF = (this->current_bank<<4) | PORTF_BASE | ADC_LATCH;
+  }
 
-  // Do bank selection
+  // Do bank selection (also clear ADC_LATCH bit)
   PORTF = (this->current_bank<<4) | PORTF_BASE;
 
 }

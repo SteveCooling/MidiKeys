@@ -10,20 +10,25 @@
  *  Output of LSB on PORTF is sent to the MUX and is subsequently read on PORTB.
  *  If you are running pullups on PORTB, set it low - if you need to read high bits, set it high.
  */
-#ifndef NUM_BANKS
-#define NUM_BANKS 16
-#endif
 
 #ifndef KEYBOARDMUX_H
 #define KEYBOARDMUX_H
 
+#define NUM_BANKS 16
 #define PORTF_BASE 0x00
+#define ADC_LATCH 0x01
+// The ADC MUX is latched every ADC_LATCH_COUNT. It must be set such that all
+// desired inputs are eventually read. A multiple of NUM_BANKS + 1 will do.
+#define ADC_LATCH_COUNT 897  
 
 class KeyboardMux {
   private:
     bool portb_invert = true;
     int current_bank = 0;
     unsigned char bankstate[NUM_BANKS];
+    int adc_count = 0;
+    int adcstate[NUM_BANKS];
+
     unsigned char state;
 
     void setupPortB();
@@ -37,6 +42,7 @@ class KeyboardMux {
     // Called when a 
     void (*noteOn)(unsigned char note);
     void (*noteOff)(unsigned char note);
+    void (*adcRead)(unsigned char input, int value) = nullptr;
 
   public:
     void init(bool pullup);
@@ -44,6 +50,7 @@ class KeyboardMux {
     //void setBankChanged(void (*bankChanged)(int bank, unsigned char data));
     void setNoteOn(void (*noteOn)(unsigned char note));
     void setNoteOff(void (*noteOff)(unsigned char note));
+    void setAdcRead(void (*adcRead)(unsigned char input, int value));
     //bool detectPullup();
 };
 
