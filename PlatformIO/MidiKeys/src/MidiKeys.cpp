@@ -20,7 +20,6 @@
 #define PRIMARY_BANK_BITS 0x01
 
 #define SPEAKER 12
-#define ADCPIN 6
 
 //#include <math.h>
 #include "KeyboardMux.h"
@@ -31,6 +30,7 @@
 
 #include "velocity.h"
 #include "lut.h"
+//#include "midikeys.h"
 
 #define BLINKLED LED_BUILTIN
 #define MIDI_CHAN 0
@@ -162,15 +162,23 @@ void noteOff(unsigned char note) {
 
 void analogValue(int input, int value) {
   #ifdef SERIAL_DEBUG
-  Serial.print("Input: ");
-  Serial.print(input);
-  Serial.print(" now value: ");
-  Serial.println(value);
+  if(input > 8 && input < 15) {
+    Serial.print("Input: ");
+    Serial.print(input);
+    Serial.print(" now value: ");
+    Serial.println(value);
+  }
   #endif
 }
 
 void cb() {
   synth.update();
+  //Serial.print("10: "); Serial.println(keyboard.adcstate[10]);
+  //Serial.print("11: "); Serial.println(keyboard.adcstate[11]);
+  //Serial.print("12: "); Serial.println(keyboard.adcstate[12]);
+  //Serial.print("13: "); Serial.println(keyboard.adcstate[13]);
+  //Serial.print("14: "); Serial.println(keyboard.adcstate[14]);
+  //Serial.print("15: "); Serial.println(keyboard.adcstate[15]);
 }
 
 // the setup function runs once when you press reset or power the board
@@ -187,7 +195,10 @@ void setup() {
 
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(BLINKLED, OUTPUT);
-  pinMode(ADCPIN, INPUT);
+
+  analogReference(DEFAULT);
+  pinMode(A7, INPUT);
+
   #ifdef SERIAL_DEBUG
   Serial.begin(115200);
   #endif

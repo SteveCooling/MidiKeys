@@ -26,7 +26,7 @@ class KeyboardMux {
     bool portb_invert = true;
     int current_bank = 0;
     unsigned char bankstate[NUM_BANKS];
-    int adcstate[NUM_BANKS];
+    //int adcstate[NUM_BANKS];
     int adc_count = 0;
 
     unsigned char state;
@@ -55,6 +55,7 @@ class KeyboardMux {
     void setNoteOff(void (*noteOff)(unsigned char note));
     void setAdcRead(void (*adcRead)(int input, int value));
     //bool detectPullup();
+    int adcstate[NUM_BANKS];
 };
 
 #endif

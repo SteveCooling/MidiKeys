@@ -97,14 +97,10 @@ void KeyboardMux::loop() {
     this->bankstate[this->current_bank] = this->state;
   }
 
-  // Increment bank counter
-  this->current_bank ++;
-  this->current_bank = 0x0f & this->current_bank;
-  
   // ADC multiplexing
   this->adc_count ++;
   if(this->adc_count >= ADC_LATCH_COUNT) {
-    this->astate = analogRead(6); // Here be dragons. Check 32u4 datasheet for speedups.
+    this->astate = analogRead(A7); // Here be dragons. Check 32u4 datasheet for speedups.
     if(this->adcstate[this->current_bank] != this->astate) {
       this->analogBankChanged();
     }
@@ -112,10 +108,16 @@ void KeyboardMux::loop() {
 
     // Prepare for the next analog reading
     this->adc_count = 0;
+  }
+
+  // Increment bank counter
+  this->current_bank ++;
+  this->current_bank = 0x0f & this->current_bank;
+
+  if(this->adc_count == 0) {  
     // Select bank and set the ADC_LATCH bit
     PORTF = (this->current_bank<<4) | PORTF_BASE | ADC_LATCH;
   }
-
   // Do bank selection (also clear ADC_LATCH bit)
   PORTF = (this->current_bank<<4) | PORTF_BASE;
 
