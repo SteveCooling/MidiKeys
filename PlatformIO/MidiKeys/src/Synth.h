@@ -28,6 +28,11 @@ class Synth {
 
     void noteOn(unsigned char note, unsigned long millis);
     void noteOff();
+
+    void setVibratoDepth(unsigned char depth);
+    void setVibratoSpeed(unsigned char speed);
+    void setGlissandoTime(unsigned char gliss);  
+
 };
 
 #endif

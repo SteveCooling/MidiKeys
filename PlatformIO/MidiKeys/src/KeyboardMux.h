@@ -19,7 +19,7 @@
 #define ADC_LATCH 0x01
 // The ADC MUX is latched every ADC_LATCH_COUNT. It must be set such that all
 // desired inputs are eventually read. A multiple of NUM_BANKS + 1 will do.
-#define ADC_LATCH_COUNT 481  
+#define ADC_LATCH_COUNT 513 
 
 class KeyboardMux {
   private:

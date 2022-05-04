@@ -160,25 +160,49 @@ void noteOff(unsigned char note) {
 
 }
 
-void analogValue(int input, int value) {
-  #ifdef SERIAL_DEBUG
-  if(input > 8 && input < 15) {
-    Serial.print("Input: ");
-    Serial.print(input);
-    Serial.print(" now value: ");
-    Serial.println(value);
-  }
-  #endif
+void printRepeat (Stream & device, const char * str, unsigned int count) {
+  while (count-- > 0) device.print(str);
 }
 
-void cb() {
+int spjoink[16];
+
+void analogValue(int input, int value) {
+  spjoink[input] = value;
+
+  switch (input) {
+    case 10:
+      synth.setGlissandoTime(value/16);
+      break;
+    case 13:
+      synth.setVibratoDepth(value/4);
+      break;
+    case 14:
+      synth.setVibratoSpeed(value/8);
+      break;
+    default:
+      break;
+  }
+  //if(input > 8 && input < 15) {
+  //  Serial.print("Input: ");
+  //  Serial.print(input);
+  //  Serial.print(" now value: ");
+  //  Serial.println(value);
+  //}
+}
+
+void synthcb() {
   synth.update();
-  //Serial.print("10: "); Serial.println(keyboard.adcstate[10]);
-  //Serial.print("11: "); Serial.println(keyboard.adcstate[11]);
-  //Serial.print("12: "); Serial.println(keyboard.adcstate[12]);
-  //Serial.print("13: "); Serial.println(keyboard.adcstate[13]);
-  //Serial.print("14: "); Serial.println(keyboard.adcstate[14]);
-  //Serial.print("15: "); Serial.println(keyboard.adcstate[15]);
+}
+
+void view_analog() {
+  for(int i = 8; i < 16; i++) {
+    Serial.print(i);
+    Serial.print(": [ ");
+    int x = spjoink[i] / 8;
+    printRepeat(Serial, "#", x);
+    printRepeat(Serial, " ", 128-x);
+    Serial.println("]");
+  }
 }
 
 // the setup function runs once when you press reset or power the board
@@ -209,7 +233,7 @@ void setup() {
   keyboard.setNoteOff(noteOff);
   keyboard.setAdcRead(analogValue);
 
-  timer.Every(10, cb);
+  timer.Every(10, synthcb);
 
   // Ready beep
   synth.init(SPEAKER);

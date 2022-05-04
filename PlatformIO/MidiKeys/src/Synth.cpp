@@ -39,3 +39,15 @@ void Synth::noteOff() {
   this->note = 0;
   this->gliss_offset = 0;
 }
+
+void Synth::setVibratoDepth(unsigned char depth) {
+  this->vibrato_depth = depth;
+}
+
+void Synth::setVibratoSpeed(unsigned char speed) {
+  this->vibrato_speed = speed;
+}
+
+void Synth::setGlissandoTime(unsigned char gliss) {
+  this->glissando = gliss;
+}
